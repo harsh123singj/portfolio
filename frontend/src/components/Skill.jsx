@@ -30,7 +30,7 @@ const skillGroups = [
     title: "Languages",
     description: "Programming fundamentals",
     icon: Code2,
-    skills: ["Java", "JavaScript", "TypeScript", "SQL"],
+    skills: ["Java", "JavaScript", "Python", "SQL"],
   },
   {
     title: "Frontend",
@@ -54,7 +54,7 @@ const skillGroups = [
     title: "AI & Architecture",
     description: "Building intelligent applications",
     icon: BrainCircuit,
-    skills: ["LLM APIs", "RAG", "Embeddings", "Redis", "Kafka"],
+    skills: ["LLM APIs", "RAG", "Embeddings", "Redis"],
   },
   {
     title: "Real-Time & Auth",
