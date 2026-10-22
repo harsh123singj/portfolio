@@ -23,8 +23,10 @@ const projects = [
     features: ["Node.js", "Prisma", "PostgreSQL", "Socket.IO"],
     image: "/Projects/Vehicle.png",
     imageAlt: "Smart Vehicle station operations dashboard",
-    liveUrl: "https://vehicle-service-station-u9i9-1vbu6c3fj-harsh-e29d.vercel.app/",
-    githubUrl: "https://github.com/harsh123singj/vehicle-service-station",
+    liveUrl:
+      "https://vehicle-service-station-u9i9-1vbu6c3fj-harsh-e29d.vercel.app/",
+    githubUrl:
+      "https://github.com/harsh123singj/vehicle-service-station",
   },
   {
     number: "03",
@@ -65,16 +67,18 @@ function ProjectRow({ project, index }) {
       onClick={(event) => {
         if (!project.liveUrl) event.preventDefault();
       }}
-      className={`group relative block min-w-0 overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] ${
+      className={`group relative block min-w-0 w-full overflow-hidden rounded-xl border border-white/10 bg-[#0b0d13] ${
         project.liveUrl ? "cursor-pointer" : "cursor-not-allowed"
       }`}
     >
-      <img
-        src={project.image}
-        alt={project.imageAlt}
-        loading="lazy"
-        className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.025]"
-      />
+      <div className="flex aspect-[16/10] w-full items-center justify-center overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.imageAlt}
+          loading="lazy"
+          className="block h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.015]"
+        />
+      </div>
 
       {project.liveUrl && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/45 group-hover:opacity-100">
@@ -122,7 +126,6 @@ function ProjectRow({ project, index }) {
             rel="noreferrer"
             className="inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-white"
           >
-            {/* <Github size={16} /> */}
             Source Code
             <ArrowUpRight size={14} />
           </a>
@@ -132,12 +135,12 @@ function ProjectRow({ project, index }) {
   );
 
   return (
-    <article className="grid grid-cols-1 items-center gap-6 py-7 sm:gap-8 md:grid-cols-2 md:gap-10 md:py-9">
-      <div className={imageFirst ? "md:order-1" : "md:order-2"}>
+    <article className="grid w-full min-w-0 grid-cols-1 items-center gap-6 py-7 sm:gap-8 md:grid-cols-2 md:gap-10 md:py-9">
+      <div className={`min-w-0 ${imageFirst ? "md:order-1" : "md:order-2"}`}>
         {image}
       </div>
 
-      <div className={imageFirst ? "md:order-2" : "md:order-1"}>
+      <div className={`min-w-0 ${imageFirst ? "md:order-2" : "md:order-1"}`}>
         {content}
       </div>
     </article>
@@ -150,7 +153,7 @@ export default function Projects() {
       id="projects"
       className="relative scroll-mt-24 px-5 py-16 sm:px-8 sm:py-20 lg:px-12"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto w-full max-w-6xl min-w-0">
         <div className="mb-5">
           <p className="text-xs font-medium tracking-[0.25em] text-white/40">
             03 / SELECTED WORK
@@ -166,7 +169,7 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="divide-y divide-white/10">
+        <div className="min-w-0 divide-y divide-white/10">
           {projects.map((project, index) => (
             <ProjectRow
               key={project.number}
